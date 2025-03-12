@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мониторинг качества воздуха - Алматы</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #004a99;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        main {
+            padding-top: 70px;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding-left: 10px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .map-container {
+            flex: 2;
+            min-width: 60%;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .charts-container, .forecast-container {
+            flex: 1;
+            min-width: 30%;
+            background: #d9e6f2;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .charts-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .info-section, .about-section, .survey-section, .forecast-section {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .calendar-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        footer {
+            background-color: #002f66;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo Name</div>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#forecast">Прогноз</a></li>
+                <li><a href="#info">Справочник</a></li>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Оставить жалобу</a></li>
+                <li><a href="#">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="content-container">
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+            <div class="charts-container">
+                <h2>Выбросы в атмосферу</h2>
+                <img src="chart-placeholder.jpg" alt="График выбросов">
+            </div>
+        </div>
+        
+        <section id="forecast" class="forecast-section">
+            <h2>Прогноз качества воздуха</h2>
+            <p>Последнее обновление: <span id="last-update">2025-03-12 12:00</span></p>
+            <div class="forecast-container">
+                <p>Ожидаемый уровень загрязнения PM2.5: <strong>55 мкг/м³</strong></p>
+                <p>Ожидаемый уровень загрязнения PM10: <strong>60 мкг/м³</strong></p>
+                <p>Температура: <strong>3°C</strong></p>
+                <p>Влажность: <strong>70%</strong></p>
+                <p>Скорость ветра: <strong>10.8 км/ч</strong></p>
+            </div>
+            <div class="calendar-container">
+                <label for="forecast-date">Выберите дату прогноза:</label>
+                <input type="date" id="forecast-date">
+            </div>
+        </section>
+
+        <section id="info" class="info-section">
+    <h2><strong>Почему важно следить за качеством воздуха?</strong></h2>
+    <div style="display: flex; align-items: center;">
+        <p style="font-weight: bold; margin-right: 10px;">Почему важно следить за качеством воздуха?</p>
+        <p style="border-left: 2px solid #ccc; padding-left: 10px; text-align: right;">
+            Качество воздуха – один из ключевых факторов, влияющих на здоровье и комфорт жизни в городе. 
+            Алматы, находясь в окружении гор, подвержен накоплению вредных веществ в атмосфере, особенно в зимний период. 
+            Основные источники загрязнения – транспорт, промышленность и бытовое отопление.
+        </p>
+    </div>
+</section>
+        </section>
+
+        <section id="guide" class="guide-section" style="background: white; padding: 20px; margin: 20px; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); text-align: center;">
+            <h2>Справочник</h2>
+            <p>В этом разделе вы найдете полезную информацию о качестве воздуха, его влиянии на здоровье и мерах предосторожности.</p>
+        </section>
+
+        <section id="about" class="about-section" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: linear-gradient(to bottom, #f5f5f5, #e0e0e0); border-radius: 10px;">
+    <div style="max-width: 60%; text-align: left;">
+        <h2 style="font-weight: bold;">О проекте</h2>
+        <p>Наш сервис помогает жителям Алматы следить за качеством воздуха в реальном времени. Мы собираем данные о загрязняющих веществах и погодных условиях, отображаем их на карте и предоставляем полезную аналитику. Наша цель – сделать информацию доступной и помочь в улучшении экологии города.</p>
+    </div>
+    </div>
+    <div style="max-width: 35%; text-align: right;">
+        <p>В рамках опроса среди жителей города Алматы, мы выявили актуальность веб-сайта для мониторинга качества воздуха.</p>
+    </div>
+    </div>
+</section>
+
+<section class="survey-section" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+    <div style="max-width: 60%;">
+        <h2>Как вы узнаёте о качестве воздуха в Алматы?</h2>
+        <img src="chart-placeholder.jpg" alt="График опроса" style="width: 100%; border-radius: 10px;">
+    </div>
+    <div style="max-width: 35%; background: #1c3d5a; color: white; padding: 15px; border-radius: 10px; text-align: center;">
+        <p>Пройди опросник и улучшай свою жизнь!</p>
+        <img src="опросник qr.png" alt="QR-код" style="width: 300px; height: 300px; margin-top: 10px;">
+    </div>
+</section>
+        
+        </main>
+    
+    <footer>
+        <p>&copy; 2025 Logo Name. Все права защищены.</p>
+        <p>Свяжитесь с нами: example@gmail.com | +7 777 777 77 77</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map').setView([43.238949, 76.889709], 12);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            var marker = L.marker([43.238949, 76.889709]).addTo(map)
+                .bindPopup("Центр Алматы: AQI 145 (Вредно)");
+
+            var circle = L.circle([43.238949, 76.889709], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 2000
+            }).addTo(map).bindPopup("Высокий уровень загрязнения");
+        });
+    </script>
+</body>
+</html>
