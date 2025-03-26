@@ -31,7 +31,7 @@
             </div>
             <div class="charts-container">
                 <h2>Выбросы в атмосферу</h2>
-                <img src="chart-placeholder.jpg" alt="График выбросов">
+                <img src="Images/chart-placeholder.jpg" alt="График выбросов">
             </div>
         </div>
 
@@ -49,19 +49,6 @@
                 <label for="forecast-date">Выберите дату прогноза:</label>
                 <input type="date" id="forecast-date">
             </div>
-        </section>
-
-        <section id="info" class="info-section">
-            <h2><strong>Почему важно следить за качеством воздуха?</strong></h2>
-            <div style="display: flex; align-items: center;">
-                <p style="font-weight: bold; margin-right: 10px;">Почему важно следить за качеством воздуха?</p>
-                <p style="border-left: 2px solid #ccc; padding-left: 10px; text-align: right;">
-                    Качество воздуха – один из ключевых факторов, влияющих на здоровье и комфорт жизни в городе.
-                    Алматы, находясь в окружении гор, подвержен накоплению вредных веществ в атмосфере, особенно в зимний период.
-                    Основные источники загрязнения – транспорт, промышленность и бытовое отопление.
-                </p>
-            </div>
-        </section>
         </section>
 
         <section id="guide" class="guide-section">
@@ -90,35 +77,43 @@
                         </ul>
                     </div>
                     <div class="guide-image">
-                        <img src="air-pollution.png" alt="Загрязнение воздуха">
+                        <img src="Images/air-pollution.png" alt="Загрязнение воздуха">
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <section id="about" class="about-section" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: linear-gradient(to bottom, #f5f5f5, #e0e0e0); border-radius: 10px;">
-            <div style="max-width: 60%; text-align: left;">
-                <h2 style="font-weight: bold;">О проекте</h2>
-                <p>Наш сервис помогает жителям Алматы следить за качеством воздуха в реальном времени. Мы собираем данные о загрязняющих веществах и погодных условиях, отображаем их на карте и предоставляем полезную аналитику. Наша цель – сделать информацию доступной и помочь в улучшении экологии города.</p>
-            </div>
-            </div>
-            <div style="max-width: 35%; text-align: right;">
-                <p>В рамках опроса среди жителей города Алматы, мы выявили актуальность веб-сайта для мониторинга качества воздуха.</p>
-            </div>
+        <section id="about-survey" class="about-survey-section">
+            <div class="about-survey-container">
+                <!-- Левая часть - О проекте -->
+                <div class="about-text">
+                    <h2>О проекте</h2>
+                    <p>
+                        Наш сервис помогает жителям Алматы следить за качеством воздуха в реальном времени.
+                        Мы собираем данные о загрязняющих веществах и погодных условиях, отображаем их на карте
+                        и предоставляем полезную аналитику. Наша цель – сделать информацию доступной и помочь в улучшении экологии города.
+                    </p>
+                    <p class="about-subtext">
+                        В рамках опроса среди жителей города Алматы, мы выявили актуальность веб-сайта
+                        для мониторинга качества воздуха.
+                    </p>
+                </div>
+
+                <!-- Правая часть - Опрос -->
+                <div class="survey-content">
+                    <div class="survey-chart">
+                        <h3>Как вы узнаёте о качестве воздуха в Алматы?</h3>
+                        <img src="Images/grafik.jpg" alt="График опроса">
+                    </div>
+                    <div class="survey-qr">
+                        <p>Пройди опросник и улучшай свою жизнь!</p>
+                        <img src="Images/опросник qr.png" alt="QR-код">
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="survey-section" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
-            <div style="max-width: 60%;">
-                <h2>Как вы узнаёте о качестве воздуха в Алматы?</h2>
-                <img src="grafik.jpg" alt="График опроса" style="width: 100%; border-radius: 10px;">
-            </div>
-            <div style="max-width: 35%; background: #1c3d5a; color: white; padding: 15px; border-radius: 10px; text-align: center;">
-                <p>Пройди опросник и улучшай свою жизнь!</p>
-                <img src="опросник qr.png" alt="QR-код" style="width: 300px; height: 300px; margin-top: 10px;">
-            </div>
-        </section>
 
     </main>
 

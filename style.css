@@ -78,7 +78,7 @@ nav ul {
         border-radius: 10px;
     }
 
-.info-section, .about-section, .survey-section, .forecast-section {
+.info-section, .forecast-section {
     background: white;
     padding: 20px;
     margin: 20px;
@@ -124,19 +124,36 @@ nav ul {
     color: #333;
 }
 
-.guide-divider {
-    border: none;
-    height: 1px;
-    background-color: #ccc;
-    width: 100%;
+.guide-section {
+    background-color: #ffffff;  /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    width: 90%; /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin: 20px auto;  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
 .guide-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
+    gap: 40px;  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    max-width: 100%;
 }
+
+.guide-image {
+    flex: 1;
+    text-align: right;
+    max-width: 45%; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+}
+
+.guide-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 .pollutants {
     flex: 1;
@@ -163,19 +180,13 @@ nav ul {
             color: #004a99;
         }
 
-.guide-image {
-    flex: 1;
-    text-align: right;
-}
-
-    .guide-image img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+@media (max-width: 1024px) {
+    .guide-section {
+        width: 95%;  /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+        max-width: none;
     }
 
-/* Адаптивность */
-@media (max-width: 768px) {
     .guide-content {
         flex-direction: column;
         align-items: center;
@@ -184,11 +195,106 @@ nav ul {
 
     .guide-image {
         text-align: center;
+        max-width: 80%;
     }
 
-        .guide-image img {
-            width: 80%;
-        }
+    .guide-image img {
+        width: 100%;
+    }
+}
+
+.about-survey-section {
+    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+.about-survey-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* пїЅпїЅпїЅпїЅ "пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" */
+.about-text {
+    max-width: 100%;
+    text-align: left;
+}
+
+    .about-text h2 {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #2a2a2a;
+    }
+
+    .about-text p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #333;
+    }
+
+.about-subtext {
+    font-size: 1em;
+    color: #555;
+    text-align: right;
+}
+
+/* пїЅпїЅпїЅпїЅпїЅ */
+.survey-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.survey-chart {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    .survey-chart img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+.survey-qr {
+    flex: 0.4;
+    background: #1c3d5a;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+    .survey-qr img {
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+    }
+
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+@media (max-width: 768px) {
+    .about-survey-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .survey-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .survey-qr img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 
@@ -238,7 +344,7 @@ nav ul {
     opacity: 0.7;
 }
 
-/* Адаптивность */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
