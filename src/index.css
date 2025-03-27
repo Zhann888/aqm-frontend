@@ -375,10 +375,65 @@ nav ul {
     background-color: #005f5c;
   }
 
+  
   .nav-actions {
     display: flex;
     align-items: center;
     gap: 16px;
   }
+
+
+
+
+  /* Иконка ☰ — бургер-меню */
+.burger {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Медиа-запрос на мобильные */
+  @media (max-width: 768px) {
+    .burger {
+      display: block;
+    }
+  
+    .nav-actions {
+      display: none;
+      position: absolute;
+      top: 65px;
+      right: 15px;
+      background: #004a99;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1001;
+    }
+  
+    .nav-actions.open {
+      display: flex;
+    }
+  
+    .nav-actions nav ul {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .nav-actions nav ul li {
+      display: block;
+    }
+  
+    .nav-actions .complaint-button {
+      width: 100%;
+    }
+  }
+  
   
   
