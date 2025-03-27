@@ -374,4 +374,11 @@ nav ul {
   .complaint-button:hover {
     background-color: #005f5c;
   }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
   
