@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import ModalComplaint from "./components/ModalComplaint";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./index.css";
 import L from "leaflet";
 
+
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     if (document.getElementById("map")._leaflet_id) return;
   
@@ -29,7 +34,8 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header onOpenModal={() => setIsModalOpen(true)} />
+
       <main>
         <div className="content-container" id="home">
           <div className="map-container">
@@ -101,6 +107,8 @@ function App() {
         </section>
       </main>
       <Footer />
+      <ModalComplaint isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
     </div>
   );
 }
