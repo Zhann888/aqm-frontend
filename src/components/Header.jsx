@@ -8,7 +8,9 @@ const Header = ({ onOpenModal }) => {
 
   return (
     <header>
-      <div className="logo">Logo Name</div>
+      <div className="logo">
+        <img src="/loGo2.png" alt="AlmaAir Logo" className="logo-img" />
+      </div>
 
       <button className="burger" onClick={toggleMenu}>
         ☰
