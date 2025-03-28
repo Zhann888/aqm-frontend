@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import ModalComplaint from "./components/ModalComplaint";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./index.css";
 import L from "leaflet";
+
+import AdminPanel from "./components/AdminPanel";
+import AdminLogin from "./components/AdminLogin";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
+
 
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (document.getElementById("map")._leaflet_id) return;
+    const mapElement = document.getElementById("map");
+    if (!mapElement || mapElement._leaflet_id) return;
   
     const map = L.map("map").setView([43.238949, 76.889709], 12);
   
@@ -31,12 +37,19 @@ function App() {
     }).addTo(map).bindPopup("Высокий уровень загрязнения");
   }, []);
   
+  
 
   return (
-    <div>
-      <Header onOpenModal={() => setIsModalOpen(true)} />
+    <Router>
+      <Routes>
+        {/* Главная страница */}
+        <Route
+        path="/"
+        element={
+          <>
+          <Header onOpenModal={() => setIsModalOpen(true)} />
 
-      <main>
+          <main>
         <div className="content-container" id="home">
           <div className="map-container">
             <div id="map"></div>
@@ -106,10 +119,35 @@ function App() {
           </div>
         </section>
       </main>
-      <Footer />
-      <ModalComplaint isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-    </div>
+      <Footer />
+      <ModalComplaint 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+      </>
+    }
+  />
+
+  {/* Страница логина для админа */}
+  <Route path="/admin/login" element={<AdminLogin />} />
+
+
+  {/* Страница админ-панели */}
+  <Route
+  path="/admin"
+  element={
+    localStorage.getItem("isAdminAuthenticated") === "true" ? (
+      <AdminPanel />
+    ) : (
+      <Navigate to="/admin/login" />
+    )
+  }
+/>
+
+    </Routes>
+   </Router>
+
   );
 }
 

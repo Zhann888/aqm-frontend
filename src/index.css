@@ -452,5 +452,84 @@ nav ul {
     }
   }
   
+
+  /* админ */
+
+  .admin-login {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
   
+  .admin-login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .admin-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #004a99;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .admin-login button:hover {
+    background-color: #003366;
+  }
+  
+  .admin-login .error {
+    color: red;
+    margin-top: 8px;
+  }
+  
+  
+  /* админ-панель */
+
+  .admin-panel {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 80px auto;
+  }
+  
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .admin-header h2 {
+    margin: 0;
+  }
+  
+  .admin-header button {
+    padding: 8px 16px;
+    background-color: #007a76;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .complaints-list {
+    margin-top: 20px;
+    display: grid;
+    gap: 16px;
+  }
+  
+  .complaint-card {
+    padding: 15px;
+    background: #f8f8f8;
+    border-left: 6px solid #004a99;
+    border-radius: 8px;
+  }
   

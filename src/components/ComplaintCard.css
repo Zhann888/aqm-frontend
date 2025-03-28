@@ -1,0 +1,23 @@
+.complaint-card {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+  
+  .complaint-card h3 {
+    margin-top: 0;
+    color: #004a99;
+  }
+  
+  .complaint-card p {
+    margin: 4px 0;
+  }
+  
+  .timestamp {
+    font-size: 0.9em;
+    color: #555;
+  }
+  

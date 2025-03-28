@@ -39,24 +39,51 @@ const ModalComplaint = ({ isOpen, onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Жалоба отправлена:", formData);
-      alert("Жалоба успешно отправлена!");
-      onClose();
-      setFormData({
-        title: "",
-        category: "",
-        district: "",
-        description: "",
-        name: "",
-        email: ""
-      });
-      setErrors({});
+      try {
+        const response = await fetch("http://localhost:5000/api/complaints", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          
+          body: JSON.stringify({
+            title: formData.title,
+            category: formData.category,
+            district: formData.district, 
+            description: formData.description,
+            name: formData.name,
+            email: formData.email
+          })
+          
+        });
+  
+        if (response.ok) {
+          alert("Жалоба успешно отправлена!");
+          setFormData({
+            title: "",
+            category: "",
+            district: "",
+            description: "",
+            name: "",
+            email: ""
+          });
+          setErrors({});
+          onClose();
+        } else {
+          alert("Ошибка при отправке жалобы");
+        }
+      } catch (error) {
+        console.error("Ошибка:", error);
+        alert("Произошла ошибка при отправке жалобы");
+      }
     }
   };
-
+  
 
 
   return (
