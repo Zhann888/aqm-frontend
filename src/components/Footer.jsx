@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="footer-container">
       <div className="footer-section">
         <div className="logo">
-        <img src="/loGo2.png" alt="AlmaAir" className="logo-img" />
+        <img src="/LOGO.png" alt="AlmaAir" className="logo-img" />
         </div>
         <p>AlmaAir – следи за качеством воздуха в режиме реального времени. Данные о загрязнении, прогнозы и аналитика для жителей города.</p>
         <p className="copyright">© 2025 AlmaAir. Все права защищены. 🌍💙</p>
