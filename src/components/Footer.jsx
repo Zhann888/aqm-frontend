@@ -16,8 +16,8 @@ const Footer = () => (
 
       <div className="footer-section">
         <h3>Мы в соцсетях:</h3>
-        <p>Instagram <span className="icon">📷</span></p>
-        <p>Telegram <span className="icon">✈️</span></p>
+        <p>Instagram <img className="icon" src="/Images/instagram.png" alt="Instagram" /></p>
+        <p>Telegram <img className="icon" src="/Images/telegram.png" alt="Telegram" /></p>
       </div>
 
       <div className="footer-divider"></div>

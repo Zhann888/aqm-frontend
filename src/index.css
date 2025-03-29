@@ -342,8 +342,12 @@ nav ul {
 }
 
 .icon {
-    margin-left: 5px;
-}
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  
 
 .copyright {
     margin-top: 10px;
