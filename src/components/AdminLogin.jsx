@@ -11,7 +11,7 @@ const AdminLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Временная проверка
+    // временноо
     if (login === "admin" && password === "12345") {
       localStorage.setItem("isAdminAuthenticated", "true");
       navigate("/admin");

@@ -1,0 +1,95 @@
+.forecast-section {
+    background-color: #e3effa;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 95%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .forecast-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .forecast-header .forecast-icon {
+    font-size: 24px;
+  }
+  
+  .forecast-header h2 {
+    font-size: 1.4rem;
+    color: #003366;
+  }
+  
+  .forecast-cards {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .forecast-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    width: 80px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .forecast-card .day {
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: #333;
+  }
+  
+  .forecast-card .date {
+    font-size: 0.75em;
+    color: #666;
+    margin-bottom: 6px;
+  }
+  
+  .forecast-card .value {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .forecast-card .desc {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  
+  .forecast-card .color-bar {
+    height: 6px;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .district-select {
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 0.95em;
+  }
+  
+  .district-select label {
+    margin-right: 8px;
+    font-weight: 500;
+    color: #003366;
+  }
+  
+  .district-select select {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+  }
+  

@@ -9,7 +9,7 @@ import AdminPanel from "./components/AdminPanel";
 import AdminLogin from "./components/AdminLogin";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-
+import ForecastSection from "./components/ForecastSection";
 
 
 function App() {
@@ -59,6 +59,9 @@ function App() {
             <img src="/Images/chart-placeholder.jpg" alt="График выбросов" />
           </div>
         </div>
+
+        <ForecastSection />
+
 
         <section id="info" className="guide-section">
           <div className="guide-container">
