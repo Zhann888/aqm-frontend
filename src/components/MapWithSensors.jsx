@@ -36,7 +36,7 @@ export default function MapWithSensors() {
     <MapContainer
       center={[43.238949, 76.889709]}
       zoom={12}
-      style={{ height: "500px", width: "100%" }}
+      style={{ height: "400px", width: "100%" }}
     >
       <TileLayer
         attribution='&copy; OpenStreetMap'

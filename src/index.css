@@ -68,7 +68,7 @@ nav ul {
 }
 
 #map {
-    height: 900px;
+    height: 550px;
     width: 100%;
     border-radius: 10px;
 }
@@ -308,6 +308,8 @@ nav ul {
 
 
 
+
+
 .survey-content {
     display: flex;
     justify-content: space-between;
@@ -325,11 +327,12 @@ nav ul {
 }
 
     .survey-chart img {
-        width: 100%;
+        width: 80%;
         border-radius: 10px;
     }
 
 .survey-qr {
+  height: 420px;
     flex: 0.4;
     background: #1c3d5a;
     color: white;
