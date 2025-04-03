@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 
 import ForecastSection from "./components/ForecastSection";
 
+import AiChatWidget from "./components/AiChatWidget";
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -128,6 +130,7 @@ function App() {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
+      <AiChatWidget />
       </>
     }
   />
