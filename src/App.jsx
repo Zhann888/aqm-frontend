@@ -58,45 +58,72 @@ function App() {
             <div id="map"></div>
           </div>
           <div className="charts-container">
+          <div className="charts-inner">
             <h2>Выбросы в атмосферу</h2>
             <PMCharts/>
           </div>
+          </div>
+
         </div>
 
         <ForecastSection />
 
 
+        
+        
         <section id="info" className="guide-section">
-          <div className="guide-container">
-            <div className="guide-text">
-              <h2>Почему важно следить за качеством воздуха?</h2>
-              <p>
-                Качество воздуха – один из ключевых факторов, влияющих на здоровье и комфорт жизни в городе.
-                Алматы, находясь в окружении гор, подвержен накоплению вредных веществ в атмосфере, особенно в зимний период.
-                Основные источники загрязнения – транспорт, промышленность и бытовое отопление.
-              </p>
-            </div>
-            <hr className="guide-divider" />
-            <div className="guide-content">
-              <div className="pollutants">
-                <h3>Основные загрязнители воздуха</h3>
-                <ul>
-                  <li><strong>PM2.5, PM10</strong> – мельчайшие частицы пыли и сажи.</li>
-                  <li><strong>CO</strong> – угарный газ.</li>
-                  <li><strong>CO₂</strong> – углекислый газ.</li>
-                  <li><strong>NO₂</strong> – оксиды азота.</li>
-                  <li><strong>SO₂</strong> – диоксид серы.</li>
-                  <li><strong>O₃</strong> – озон.</li>
-                  <li><strong>NH₃</strong> – аммиак.</li>
-                  <li><strong>H₂S</strong> – сероводород.</li>
-                </ul>
-              </div>
-              <div className="guide-image">
-                <img src="/Images/air-pollution.png" alt="Загрязнение воздуха" />
-              </div>
-            </div>
-          </div>
-        </section>
+  <div className="guide-container">
+
+    <div className="guide-header">
+      <div className="guide-title">
+        <h2>Почему важно следить<br />за качеством воздуха?</h2>
+      </div>
+
+      <div className="vertical-divider"></div>
+
+      <div className="guide-description">
+        <p>
+          Качество воздуха – один из ключевых факторов, влияющих на здоровье и комфорт жизни в городе.
+          Алматы, находясь в окружении гор, подвержен накоплению вредных веществ в атмосфере,
+          особенно в зимний период. Основные источники загрязнения – транспорт, промышленность и бытовое отопление.
+        </p>
+      </div>
+    </div>
+
+
+    <div className="horizontal-divider"></div>
+
+
+    <div className="guide-content">
+      <div className="pollutants-box">
+
+        <div className="pollutants">
+          <h3>Основные загрязнители воздуха</h3>
+          <ul>
+            <li><strong>PM2.5, PM10</strong> – мельчайшие частицы пыли и сажи, способные проникать глубоко в лёгкие, вызывая болезни дыхательной системы.</li>
+            <li><strong>CO (угарный газ)</strong> – невидимый и опасный газ, нарушающий доставку кислорода в организм.</li>
+            <li><strong>CO₂ (углекислый газ)</strong> – основной фактор изменения климата, накапливающийся в атмосфере.</li>
+            <li><strong>NO₂, NO (оксиды азота)</strong> – выбрасываются транспортом и промышленностью, вызывают раздражение дыхательных путей.</li>
+            <li><strong>SO₂ (диоксид серы)</strong> – источник кислотных дождей и проблем с дыханием.</li>
+            <li><strong>O₃ (озон)</strong> – на больших высотах защищает нас, но у поверхности становится токсичным.</li>
+            <li><strong>NH₃ (аммиак)</strong> – выбрасывается сельским хозяйством, вредит дыхательной системе.</li>
+            <li><strong>H₂S (сероводород)</strong> – токсичный газ с резким запахом, опасный в высокой концентрации.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div className="guide-image">
+        <img src="/Images/air-pollution.png" alt="Загрязнение воздуха" />
+      </div>
+    </div>
+
+    <div className="horizontal-divider"></div>
+
+
+  </div>
+</section>
+
 
         <section id="about" className="about-survey-section">
           <div className="about-survey-container">
