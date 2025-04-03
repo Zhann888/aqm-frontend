@@ -411,9 +411,11 @@ nav ul {
 
   
   .nav-actions {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     gap: 16px;
+    padding-right: 20px;
   }
 
 
