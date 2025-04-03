@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import ForecastSection from "./components/ForecastSection";
 
 import AiChatWidget from "./components/AiChatWidget";
+import PMCharts from "./components/PMcharts";
 
 
 function App() {
@@ -58,7 +59,7 @@ function App() {
           </div>
           <div className="charts-container">
             <h2>Выбросы в атмосферу</h2>
-            <img src="/Images/chart-placeholder.jpg" alt="График выбросов" />
+            <PMCharts/>
           </div>
         </div>
 
