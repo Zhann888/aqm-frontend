@@ -1,0 +1,25 @@
+.pulsing-marker {
+    width: 30px;
+    height: 30px;
+    background-color: var(--color, green);
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    animation: pulse 1.8s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+  }
+  

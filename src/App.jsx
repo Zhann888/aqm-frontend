@@ -1,9 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import ModalComplaint from "./components/ModalComplaint";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./index.css";
-import L from "leaflet";
+// eslint-disable-next-line no-unused-vars
+// import L from "leaflet";
 
 import AdminPanel from "./components/AdminPanel";
 import AdminLogin from "./components/AdminLogin";
@@ -14,31 +16,36 @@ import ForecastSection from "./components/ForecastSection";
 import AiChatWidget from "./components/AiChatWidget";
 import PMCharts from "./components/PMcharts";
 
+import MapWithSensors from "./components/MapWithSensors";
+import "leaflet/dist/leaflet.css";
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const mapElement = document.getElementById("map");
-    if (!mapElement || mapElement._leaflet_id) return;
+  // useEffect(() => {
+  //   const mapElement = document.getElementById("map");
+  //   if (!mapElement || mapElement._leaflet_id) return;
   
-    const map = L.map("map").setView([43.238949, 76.889709], 12);
+  //   const map = L.map("map").setView([43.238949, 76.889709], 12);
   
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors"
-    }).addTo(map);
+  //   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //     attribution: "© OpenStreetMap contributors"
+  //   }).addTo(map);
   
-    L.marker([43.238949, 76.889709])
-      .addTo(map)
-      .bindPopup("Центр Алматы: AQI 145 (Вредно)");
+  //   L.marker([43.238949, 76.889709])
+  //     .addTo(map)
+  //     .bindPopup("Центр Алматы: AQI 145 (Вредно)");
   
-    L.circle([43.238949, 76.889709], {
-      color: "red",
-      fillColor: "#f03",
-      fillOpacity: 0.5,
-      radius: 2000
-    }).addTo(map).bindPopup("Высокий уровень загрязнения");
-  }, []);
+  //   L.circle([43.238949, 76.889709], {
+  //     color: "red",
+  //     fillColor: "#f03",
+  //     fillOpacity: 0.5,
+  //     radius: 2000
+  //   }).addTo(map).bindPopup("Высокий уровень загрязнения");
+  // }, []);
+
+  
   
   
 
@@ -54,9 +61,13 @@ function App() {
 
           <main>
         <div className="content-container" id="home">
-          <div className="map-container">
+          {/* <div className="map-container">
             <div id="map"></div>
+          </div> */}
+          <div className="map-container">
+            <MapWithSensors />
           </div>
+
           <div className="charts-container">
           <div className="charts-inner">
             <h2>Выбросы в атмосферу</h2>

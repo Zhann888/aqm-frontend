@@ -48,7 +48,7 @@ export default function AiChatWidget() {
       {isOpen && (
         <div className="chat-box">
           <div className="chat-header">
-            <span>ИИ-консультант</span>
+            <span>ИИ-консультант AlmaAir</span>
             <button onClick={toggleChat} className="close-btn">×</button>
           </div>
 
